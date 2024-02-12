@@ -1,0 +1,33 @@
+git init
+
+Seriloq.Sinks.Seq
+Roslynator.Analyzers
+SonarAnalyzer.CSharp
+Stylecop.Analyzers
+
+nbgv install
+
+New-Item -ItemType File -Name README.MD
+New-Item -ItemType File -Name CHANGELOG.MD
+New-Item -ItemType File -Name CODEOWNERS.MD
+New-Item -ItemType File -Name gitguardian.yml
+New-Item -ItemType File -Name sonar-project.properties 
+
+mkdir .github
+
+npm install --save-dev --save-exact prettier
+npm install --save-dev husky
+npm install write-good
+npm install broken-link-checker
+npm i readme-md-generator
+npm install --save-dev cspell@latest
+
+node --eval "fs.writeFileSync('.prettierrc','{}\n')"
+
+gh repo create [<name>] [flags]
+
+dotnet build /p:AssemblyNameOverride=MyCustomName
+
+$sln = (Get-ChildItem -Path . -Filter *.sln).FullName
+
+NDepend.Console.exe /cp C:\temp\MyProj.ndproj "$sln|-filter" "E:\My Dir\MyAssembly1.dll" E:\MyDir\MyAssembly2.dll
